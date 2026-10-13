@@ -1,0 +1,20 @@
+{
+  "scan_stats": {
+    "excluded_prefix": 2401,
+    "degenerate_box": 1,
+    "dropped_other_classes": 9933
+  },
+  "dropped_non_target_labels": {
+    "excluded_marking_blur": 9933
+  },
+  "split_seed": 42,
+  "ratios": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "stratification": "country x rarest target class present (or background)",
+  "excluded_prefixes": [
+    "China_Drone"
+  ]
+}
