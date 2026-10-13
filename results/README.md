@@ -1,15 +1,18 @@
 # Results
 
-Copy these from `MyDrive/RDD_fair/results/` on Google Drive before publishing:
+This folder contains the fixed data split (`00_dataset/`, with SHA-256 hashes) and the
+software environment of the runs (`00_environment/`).
 
-| Folder | What to copy |
+All other outputs from the paper's runs are attached to the
+[v1.0 release](../../releases/tag/v1.0) as `results_full.zip`:
+
+| Folder | Contents |
 |---|---|
-| `00_dataset/` | split files and manifests with SHA-256 hashes (needed to rebuild the exact split) |
-| `00_environment/` | `pinned_versions.json`, pip freeze, GPU info |
-| `<model>/seed0/logs/` | `train_log.csv`, `run_info.json`, `selection.json` |
-| `<model>/seed0/metrics/` | metric JSON/CSV files and `operating_threshold.json` |
-| `<model>/seed0/predictions/` | `val.json`, `test.json`, `albania.json` (COCO-format detections) |
-| `comparison/` | cross-model tables, bootstrap results, `speed_benchmark.csv`, `reproducibility_appendix.md` |
+| `<model>/seed0/logs/` | training logs, selected epoch |
+| `<model>/seed0/metrics/` | per-class metrics, bootstrap CIs, operating thresholds |
+| `<model>/seed0/predictions/` | detections on val, test and Albania (COCO format) |
+| `<model>/seed0/figures/` | PR curves, confusion matrices, prediction images |
+| `comparison/` | cross-model tables and paired bootstrap tests |
+| `size_and_timing/` | AP by object size and inference-time results (notebook 05) |
 
-Do **not** copy `checkpoints/` here. The selected weights (`best.pt`, one per model) are
-attached to the GitHub Release instead, because GitHub does not accept files over 100 MB.
+The trained weights (`*_best.pt`, one per model) are attached to the same release.
