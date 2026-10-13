@@ -1,0 +1,10 @@
+   __pycache__/
+   *.py[cod]
+   .ipynb_checkpoints/
+   .DS_Store
+   *.pt
+   *.pth
+   *.zip
+   rdd_local/
+   rdd_fair_data/
+   albania_test/
