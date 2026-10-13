@@ -18,7 +18,8 @@ threshold tuning.
 │   ├── 02_train_FasterRCNN_ResNet50.ipynb
 │   ├── 03_train_YOLOv8m.ipynb
 │   ├── 04_evaluate_and_compare.ipynb
-│   └── 05_size_and_timing.ipynb
+│   ├── 05_size_and_timing.ipynb
+│   └── 06_paired_bootstrap_10k.ipynb
 ├── rdd_fair/              shared Python package used by all notebooks
 │   ├── config.py          paths and settings (edit only the top if your paths differ)
 │   ├── prepare_data.py    builds the fixed RDD2022 split (seed 42) + SHA-256 hashes
@@ -66,6 +67,7 @@ used for the paper, for running outside Colab.
 | 03_train_YOLOv8m.ipynb | 1 seed × 50 epochs |
 | 04_evaluate_and_compare.ipynb | predictions, metrics, bootstrap CIs, paired tests, error analysis, Albania results |
 | 05_size_and_timing.ipynb | AP by object size (small/medium/large) and the inference-time measurements reported in the paper |
+| 06_paired_bootstrap_10k.ipynb | 95% confidence intervals and paired two-sided p-values reported in the paper (10,000 resamples) |
 
 The first notebook you run creates the fixed split (seed 42) and saves it to Drive. Every later
 session rebuilds the identical dataset from it and checks the SHA-256 hashes. If Colab disconnects,
@@ -112,7 +114,7 @@ MyDrive/RDD_fair/results/
 | Model selection | best validation mAP@0.5:0.95 from the shared evaluator |
 | Inference | conf ≥ 0.001 for AP, class-wise NMS IoU 0.5, max 100 detections |
 | P/R/F1 | per-model threshold maximising macro-F1 on validation, applied unchanged to test and Albania |
-| Statistics | image-level bootstrap 95% CIs (1,000 resamples, seed 12345) + paired bootstrap tests |
+| Statistics | notebook 06: image-level bootstrap, 10,000 resamples (seed 12345); 95% CIs and paired two-sided p-values, both models scored on the same resampled images (notebook 04 uses a quicker 1,000-resample version during evaluation) |
 | Speed | notebook 05: batch 1, FP32, one NVIDIA A100-SXM4-40GB, 550 randomly sampled RDD2022 test images (seed 0), first 10 as warm-up and 540 timed; includes pre-processing, forward pass and NMS, not image loading |
 
 ## Citation
@@ -121,6 +123,10 @@ If you use this code, please cite the paper (reference to be added on publicatio
 Albanian test set:
 
 > Pysqyli, L.: Albanian road damage test set (v1.0). Zenodo (2026). https://doi.org/10.5281/zenodo.23351414
+
+and the code:
+
+> Pysqyli, L.: rdd-albania-road-damage (v1.0). Zenodo (2026). https://doi.org/10.5281/zenodo.23352926
 
 ## License
 
