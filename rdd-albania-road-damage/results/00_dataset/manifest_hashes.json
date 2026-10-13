@@ -1,0 +1,8 @@
+{
+  "rdd_train_coco.json": "adfc8fb4a8ca75b3b72e88a33fbfce4eb6818a252f4fb5b3adf1b6f803e8e2e0",
+  "rdd_val_coco.json": "aa1b613080353c7ff0fbb769e4d65486a8c2c9b59d2e1e463d9d64f9e5e18846",
+  "rdd_test_coco.json": "464348e497a4ef56a21824c535077092ef0cf69f6a03b65b78456fa6a94dc9d7",
+  "train_manifest.csv": "d92435239f31e5e8ec50cc75823f8f9e970a4eca4570b3a5efd20406a7e14ae3",
+  "val_manifest.csv": "1c51693497570bd92858551a8f252f952d7f4efd37b47662f3d7f2037423138d",
+  "test_manifest.csv": "b64d46ba9325d08ee974dc9e83e3247881473bbbc8aae58911be60c7cbc3c3b1"
+}

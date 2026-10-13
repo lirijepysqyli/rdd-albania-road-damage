@@ -1,0 +1,15 @@
+# Versions used for the paper (Google Colab, NVIDIA A100, CUDA 12.8/13.0).
+# In Colab you do not need this file: the notebooks install and pin these themselves.
+torch==2.11.0
+torchvision==0.26.0
+ultralytics==8.4.171
+pycocotools==2.0.11
+numpy
+pandas
+matplotlib
+opencv-python
+pillow
+pyyaml
+psutil
+thop
+tabulate
